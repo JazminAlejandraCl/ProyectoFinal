@@ -1,0 +1,31 @@
+<body>
+	<h2>Configuracion del VirtualHost</h2>
+	<p>Lo primero que tenemos que hacer es entrar a la carpeta /etc/apache2/sites-available ,una vez en esa carpeta escribiremos sudo nano library.com.conf para proceder a modificarlo.</p>
+	<p>Dentro del archivo, escribe el codigo que se encuentra a continuacion:</p>
+	<ul>
+		<li>VirtualHost*:80></li>
+		<li>Server Name library.com </li>
+		<li>Server Alias www.library.com </li>
+		<li> Server Admin bryangfloresr2@gmail.com (ejemplo)</li>
+		<li>DocumentRoot /var/log/library.com-error.log</li>
+		<li>CustomLog /var/log/library.com-acces.log. common</li>
+		<li>ServerName</li>
+		<li>/VirtualHost></li>
+   </ul>
+	<p>Revisa que tus carpetas estén en el siguiente orden /etc/apache2/sites-available/ escribiendo el comando ls .</p>
+	<p>En la carpeta sites-available escribe:
+		sudo a2ensite library.com (para habilitar el dominio)</p>
+	<p>Reinicia el servicio de apache con el comando sudo service apache2 restart</p>
+	<p>Entra a la carpeta /etc/hosts/ y agrega lo siguiente:</p>
+	<ul>
+		<li>127.0.0.1 library.com</li>
+		<li>127.0.0.1 www.library.com</li>
+	</ul>
+	<p>Guarda los cambios mediante Ctrl+O</p>
+	<p>Una vez fuera de la maquina virtual en consola entra a la siguiente carpeta: /etc/hosts y agrega el ip de la red anfitrion + nombre del dominio. Por ejemplo: </p>
+	<ul>
+		<li>192.168.56.101 library.com</li>
+		<li>192.168.56.101 www.library.com</li>
+	</ul>
+</p>
+</body>
